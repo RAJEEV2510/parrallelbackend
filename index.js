@@ -25,11 +25,12 @@ app.use('/', route);
 app.use('/admin',adminrouter)
 
 app.get('/',(req,res)=>{
-//    blogModel.find().then((result)=>{return result}).then((data)=>{console.log(data)   
-//     res.json({'data':data})
-//  })
+    blogModel.find().then((result) => { return result }).then((data) => {
 
-    res.send("HELLO WORD")
+        res.json({ 'data': data })
+    })
+
+
 })
 app.get('/blog',(req,res)=>{
 
