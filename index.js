@@ -25,6 +25,7 @@ app.use('/', route);
 app.use('/admin',adminrouter)
 
 app.get('/',(req,res)=>{
+
     blogModel.find().then((result) => { return result }).then((data) => {
 
         res.json({ 'data': data })
@@ -41,14 +42,17 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.post('/blog',(req,res)=>{
  
 console.log(req.body)
+
     const blog=new blogModel({
         
-        blogTitle:req.body.title,
-       blogAuthor:req.body.author,
-       blogDescription:req.body.blogdescription,
-       blogImgUrl:req.body.blogurl,
-       blogTime:req.body.time,
+        blogTitle: req.body.blogtitle,
+        blogAuthor: req.body.blogauthor,
+        blogDescription: req.body.blogdescription,
+        blogImgUrl: req.body.blogurl,
+        blogTime: req.body.time,
      })
+
+
 
    blog.save().then((data)=>{return data}).then((result)=>{
 
