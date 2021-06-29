@@ -58,7 +58,7 @@ console.log(req.body)
 
 
 
-app.listen(3000,()=>{
+app.listen(3000 || 80, () => {
 
     console.log('server is running')
 })
