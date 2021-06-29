@@ -59,7 +59,7 @@ console.log(req.body)
 
 
 
-app.listen(3000 || 80, () => {
+app.listen(process.env.PORT || 3000, () => {
 
     console.log('server is running')
 })
